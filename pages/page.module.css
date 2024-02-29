@@ -1,0 +1,22 @@
+.watch {
+display: flex;
+gap: 40px;
+padding: 10px;
+justify-content: center;
+justify-items: center;
+  }
+  .errorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px; /* Adjust as needed */
+  }
+  
+  .errorMessage {
+    color: #c0392b; /* Red color */
+    font-size: 24px; /* Adjust font size as needed */
+    text-align: center;
+    margin-top: 20px; /* Adjust as needed */
+  }
+  
