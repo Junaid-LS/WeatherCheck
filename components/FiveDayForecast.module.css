@@ -22,3 +22,9 @@ text-align: center;
   justify-content: space-evenly;
   }
 
+  @media (max-width:767px){
+    .watch {
+      margin: auto;
+   
+     }
+   }

@@ -46,3 +46,9 @@
 .weatherInfo{
   padding-bottom: 20px;
 }
+@media (max-width:767px){
+  .weatherbox{
+    margin: auto;
+ 
+   }
+ }

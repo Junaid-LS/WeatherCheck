@@ -10,11 +10,7 @@ const CurrentWeather = ({ weatherData }) => {
     // Create a new Date object adjusted with the timezone offset
     const localDate = new Date(unixTime + offset);
 
-    // Check if localDate is a valid Date object
-    // if (isNaN(localDate)) {
 
-    //   return 'Date is not valid';
-    // }
 
     const formattedTime = localDate.toLocaleTimeString("en-US", {
       timeZone: "UTC",

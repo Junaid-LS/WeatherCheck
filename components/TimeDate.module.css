@@ -27,3 +27,8 @@
 
   font-weight: 1;
 }
+@media (max-width:667){
+ .watch{
+    display: block;
+  }
+}
