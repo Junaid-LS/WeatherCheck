@@ -38,12 +38,12 @@ const CurrentWeather = ({ weatherData }) => {
   return (
     <div className={classes.main}>
       {weatherData && (
-        <div>
+        <div className="flex flex-row sm:flex-col">
           <div className="mb-4">
             <p className="text-3xl font-bold">{Math.round(weatherData.list[0].main.temp - 273.15)}°C</p>
             <p>Feels Like: <span className="font-bold">{Math.round(weatherData.list[0].main.feels_like - 273.15)}°C</span></p>
           </div>
-          <div >
+          <div className=" flex flex-row sm:flex-col">
             <div className="flex mb-2">
               <Image src="/sunrise.png" alt="Sunrise Icon" width={40} height={40} />
               <p className="text-sm">Sunrise<br />{formatLocalTime(weatherData.city.sunrise, weatherData.city.timezone)}</p>
@@ -62,7 +62,7 @@ const CurrentWeather = ({ weatherData }) => {
         </div>
       )}
       {weatherData && (
-        <div className="flex flex-col">
+        <div className="flex flex-row sm:flex-col">
           <div className="flex gap-2">
             <div>
               <Image src="/humidity 1.png" alt="Humidity Icon" width={40} height={40} />
