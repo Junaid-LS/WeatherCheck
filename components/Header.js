@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaSearch } from "react-icons/fa";
-import styles from "./Header.module.css";
 
 const Header = ({ onSearch, weatherData }) => {
   const [city, setCity] = useState("");
-  
+
   useEffect(() => {
     const defaultCity = "Karachi";
     setCity(defaultCity);
     onSearch(defaultCity);
   }, []);
-  
+
   const handleChange = (e) => {
     setCity(e.target.value);
   };
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     onSearch(city);
@@ -50,27 +49,27 @@ const Header = ({ onSearch, weatherData }) => {
 
   return (
     <header>
-      <form onSubmit={handleSubmit} className={styles.headerContainer}>
-        <div className={styles.searchContainer}>
+      <form onSubmit={handleSubmit} className="flex justify-center gap-16 p-2">
+        <div className="relative">
           <input
             type="text"
             value={city}
             placeholder="Search for your preferred city.."
             onChange={handleChange}
-            className={styles.searchInput}
+            className="w-[30rem] pl-12 py-2 bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
-          <FaSearch className={styles.searchIcon} />
+          <FaSearch className="absolute left-6 top-1/2 transform -translate-y-1/2 text-white" />
         </div>
         {weatherData && (
-          <button type="button" onClick={handleGetCurrentLocation} className={styles.btnLocation}>
+          <button type="button" onClick={handleGetCurrentLocation} className="flex items-center px-4 py-2 font-bold text-white bg-gray-800 rounded-full hover:bg-black hover:text-white">
             <Image
               src="/location icon.png"
-              alt="Sunrise Icon"
+              alt="Location Icon"
               width={20}
               height={20}
-              className={styles.imgLocation}
+              className="mr-2"
             />
-            current Location
+            Current Location
           </button>
         )}
       </form>

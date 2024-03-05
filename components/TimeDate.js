@@ -1,5 +1,4 @@
 import React from "react";
-import classes from "./TimeDate.module.css";
 
 const WeatherInfo = ({ weatherData }) => {
   const formatLocalTime = (timestamp, timezone) => {
@@ -41,15 +40,16 @@ const WeatherInfo = ({ weatherData }) => {
     });
     return formattedDate;
   };
+
   return (
-    <div className={classes.watch}>
+    <div className="text-center shadow-custom rounded-xl px-6">
       {weatherData && (
         <div>
-          <p className={classes.athens}>{weatherData.city.name}</p>
-          <p className={classes.TimeDate}>
+          <p className="pt-10 text-xl font-bold">{weatherData.city.name}</p>
+          <p className="text-5xl font-bold pt-8 mx-auto">
             {formatLocalTime(weatherData.list[0].dt, weatherData.city.timezone)}
           </p>
-          <h5 className={classes.dateMonth}>
+          <h5 className="text-sm font-thin">
             {formatLocalDate(weatherData.list[0].dt, weatherData.city.timezone)}
           </h5>
         </div>
