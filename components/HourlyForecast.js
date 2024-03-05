@@ -18,12 +18,12 @@ const HourlyForecast = ({ weatherData }) => {
   };
 
   return (
-    <div className="text-center rounded-xl shadow-custom w-[600px]">
-      <h4 className="font-bold text-lg py-3">Hourly Forecast:</h4>
-      <div className="flex justify-center gap-4 rounded-lg">
+    <div className="text-center rounded-xl shadow-custom px-6 p-3">
+      <h4 className="font-bold pb-3">Hourly Forecast:</h4>
+      <div className="flex justify-center gap-4 rounded-lg flex-wrap">
         {weatherData &&
           weatherData.list.slice(0, 5).map((item, index) => (
-            <div className="bg-gray-800 p-2 px-6 rounded-2xl" key={index}>
+            <div className="bg-gray-800 p-2 px-6 rounded-lg" key={index}>
               <h4>{item.dt_txt.slice(11, 16)}</h4>
               <Image
                 src={getWeatherIcon(item.weather[0].main)}

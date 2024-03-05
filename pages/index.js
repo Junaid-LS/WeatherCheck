@@ -7,7 +7,6 @@ import CurrentWeather from "@/components/CurrentWeather";
 import FiveDayForecast from "@/components/FiveDayForecast";
 import HourlyForecast from "@/components/HourlyForecast";
 
-
 const Index = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState(null); // State for holding error message
@@ -35,18 +34,11 @@ const Index = () => {
   };
 
   return (
-    
     <div>
       <Header onSearch={handleSearch} weatherData={weatherData} />
       {error && ( // Render error message if error state is not null
         <div className="flex justify-center items-center flex-col mt-12">
-          <Image
-            src="/error.png"
-            alt="Sunrise Icon"
-            width={40}
-            height={40}
-           
-          />
+          <Image src="/error.png" alt="Sunrise Icon" width={40} height={40} />
           <h1 className="text-red-600 text-2xl text-center mt-5">
             {"Please type valid city name !"}
           </h1>
@@ -55,14 +47,24 @@ const Index = () => {
       {!error &&
         weatherData && ( // Render weather components if no error and weatherData is available
           <>
-            <div className="flex justify-center mb-9 gap-6">
+            {/* <div className="flex justify-center mb-7 gap-6">
               <TimeDate weatherData={weatherData} />
               <CurrentWeather weatherData={weatherData} />
             </div>
             <div className="flex justify-center gap-6">
               <FiveDayForecast weatherData={weatherData} />
               <HourlyForecast weatherData={weatherData} />
-            </div>
+            </div> */}
+            {/* <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start lg:mb-7 lg:gap-6"> */}
+              <div className="flex flex-col sm:flex-row justify-center mb-7 gap-6 ">
+                <TimeDate weatherData={weatherData} />
+                <CurrentWeather weatherData={weatherData} />
+              </div>
+              <div className=" flex flex-col sm:flex-row justify-center mb-7 gap-6">
+                <FiveDayForecast weatherData={weatherData} />
+                <HourlyForecast weatherData={weatherData} />
+              </div>
+            {/* </div> */}
           </>
         )}
     </div>

@@ -31,7 +31,7 @@ const FiveDayForecast = ({ weatherData }) => {
   return (
     <div className="text-center rounded-2xl shadow-custom px-6">
       <p className="font-bold text-lg py-2">5 Days Forecast:</p>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col justify-center flex-wrap sm:text-center">
         {weatherData &&
           weatherData.list.map((item, index) => {
             if (index % 8 !== 0) return null;

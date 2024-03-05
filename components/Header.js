@@ -49,14 +49,14 @@ const Header = ({ onSearch, weatherData }) => {
 
   return (
     <header>
-      <form onSubmit={handleSubmit} className="flex justify-center gap-16 p-2">
+      <form onSubmit={handleSubmit} className="flex justify-center gap-16 pb-4 p-2 flex-wrap">
         <div className="relative">
           <input
             type="text"
             value={city}
             placeholder="Search for your preferred city.."
             onChange={handleChange}
-            className="w-[30rem] pl-12 py-2 bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-[20rem] sm:w-[30rem] pl-12 py-2 bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
           <FaSearch className="absolute left-6 top-1/2 transform -translate-y-1/2 text-white" />
         </div>

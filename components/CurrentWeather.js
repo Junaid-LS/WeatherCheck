@@ -27,12 +27,16 @@ const CurrentWeather = ({ weatherData }) => {
       case "Snow":
         return "/snow 1.png";
       default:
-        return "/clear 3.png"; // Default to a sunny icon
+        return "/clear 3.png"; 
     }
   };
 
+  // for classes 
+  let classes = {
+    main : "text-center flex items-center justify-center px-6 rounded-xl shadow-custom flex-col md:flex-row md:items-center md:gap-6",
+  }
   return (
-    <div className="text-center flex items-center justify-center px-6 rounded-xl shadow-custom ">
+    <div className={classes.main}>
       {weatherData && (
         <div>
           <div className="mb-4">
